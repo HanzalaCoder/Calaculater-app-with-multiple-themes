@@ -1,0 +1,267 @@
+
+:root {
+/* them1 */
+/* main bg */
+--main-bg : hsl(222, 26%, 31%);
+/* toggle bg */
+--toggle-bg-keypad-bg: hsl(223, 31%, 20%);
+/* screen-bg */
+--screen-bg: hsl(224, 36%, 15%);
+
+/* keys */
+--key-back-bg : hsl(225, 21%, 49%);
+--key-back-hover : hsl(225, 35%, 70%);
+--key-back-shadow : hsl(224, 28%, 35%);
+
+--key-equal-bg: hsl(6, 63%, 50%);
+--key-equal-hover: hsl(6, 93%, 70%);
+--key-equal-shadow: hsl(6, 70%, 34%);
+
+--key-main-bg : hsl(30, 25%, 89%);
+--key-main-hover : hsl(30, 25%, 100%);
+--key-main-shadow : hsl(28, 16%, 65%);
+
+/* text */
+--text-buttons: hsl(221, 14%, 31%);
+--text-head: hsl(0, 0%, 100%);
+}
+
+
+.them2 {
+--main-bg: hsl(0, 0%, 90%);
+--toggle-bg-keypad-bg: hsl(0, 5%, 81%);
+--screen-bg: hsl(0, 0%, 93%);
+
+--key-back-bg: hsl(185, 42%, 37%);
+--key-back-hover: hsl(185, 42%, 60%);
+--key-back-shadow : hsl(185, 58%, 25%);
+
+--key-equal-bg: hsl(25, 98%, 40%);
+--key-equal-hover: hsl(25, 98%, 60%);
+--key-equal-shadow: hsl(25, 99%, 27%);
+
+--key-main-bg : hsl(45, 7%, 89%);
+--key-main-hover : hsl(45, 7%, 100%);
+--key-main-shadow: hsl(35, 11%, 61%);
+
+--text-buttons: hsl(60, 10%, 19%);
+--text-head: hsl(60, 10%, 9%);
+
+}
+.them3 {
+--main-bg  : hsl(268, 75%, 9%);
+--toggle-bg-keypad-bg: hsl(268, 71%, 12%);
+--screen-bg : hsl(268, 71%, 12%);
+
+--key-back-bg: hsl(281, 89%, 26%);
+--key-back-hover: hsl(281, 89%, 47%);
+--key-back-shadow: hsl(285, 91%, 52%);
+
+--key-equal-bg : hsl(176, 100%, 44%);
+--key-equal-hover : hsl(176, 100%, 60%);
+--key-equal-shadow: hsl(177, 92%, 70%);
+
+--key-main-bg: hsl(268, 47%, 21%);
+--key-main-hover: hsl(268, 47%, 45%);
+--key-main-shadow: hsl(290, 70%, 36%);
+
+--text-buttons: hsl(52, 100%, 62%);
+--text-head:hsl(52, 100%, 72%);
+}
+
+*,
+*::after,
+ *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 700;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--main-bg);
+    min-height: 100vh;
+    font-size: 1.25rem;
+}
+
+.main-grid {
+    max-width: 450px;
+    margin: 4rem auto;
+    padding: 0rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(300px, 1);
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    color: var(--text-head);
+    text-transform: lowercase;
+}
+
+.result-input {
+    display: none;
+}
+
+.prev-input {
+    display: block;
+}
+
+.current-input {
+    display: block;
+}
+
+.input-container {
+    background-color: var(--screen-bg);
+    align-items: flex-end;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-head);
+    height: 120px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.prev-input {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+
+}
+
+.current-input {
+    word-wrap: break-word;
+    font-size: 2.2rem;
+    letter-spacing: .1em;
+}
+
+.bts-grid {
+    background-color: var(--toggle-bg-keypad-bg);
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+button {
+    font-weight: 700;
+    width: 100%;
+
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    color: var(--text-buttons);
+    font-size: 2rem;
+    box-shadow: 0px 3px 0px var(--key-main-shadow);
+    background-color: var(--key-main-bg);
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover,button:active {
+    background-color:  var(--key-main-hover);;
+}
+
+.del, .reset {
+    font-size: 1rem;
+    background-color: var(--key-back-bg);
+    box-shadow: 0px 3px 0px var(--key-back-shadow);
+    color: white;
+}
+.del:hover, .del:active, .reset:hover, .reset:active {
+    background-color: var(--key-back-hover);
+    
+}
+.reset {
+    grid-column: span 2;
+    width: 100%;
+}
+.equal {
+    background-color: var(--key-equal-bg);
+    box-shadow: 0px 3px 0px var(--key-equal-shadow);
+    color: whitesmoke;
+    font-size: 1rem;
+    grid-column: span 2;
+    width: 100%;
+}
+
+.equal:hover,.equal:active {
+    background-color: var(--key-equal-hover);
+
+}  
+
+/* toggle */
+
+.themes-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--text-head);
+   text-transform: uppercase;
+   font-size: 1rem;
+}
+
+.switch {
+    position: relative;
+    display:inline-block;
+    width: 130px;
+    background-color: var(--toggle-bg-keypad-bg);
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: .3em .8em;
+    align-items: center;
+
+}
+.btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color:  white;
+    display: grid;
+    place-content: center;
+    padding: .7em;
+    color: black;
+}
+
+.active {
+    background-color: var(--key-equal-bg);
+    color: white;
+}
+
+
+@media screen and (min-width:50em) {
+    .main-grid {
+        margin: 10vh auto;
+        max-width: 550px;
+    }
+    button {
+        width: 100%;
+        height: 50px;
+    }
+    
+}
+@media screen and (min-width:70em) {
+    .main-grid {
+        margin: 20vh auto;
+       
+    }
+    
+}
+
+
+
